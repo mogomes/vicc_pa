@@ -1,0 +1,12 @@
+# Kopieren nach terraform.tfvars und anpassen. terraform.tfvars ist in .gitignore.
+
+container_image = "cyxeon/vicc-inventory:latest"
+location        = "switzerlandnorth"
+
+# Bewertungsphase: kein Cold Start
+min_replicas         = 1
+sql_auto_pause_delay = -1
+
+# Kostenoptimierter Betrieb nach der Abgabe:
+# min_replicas         = 0
+# sql_auto_pause_delay = 60

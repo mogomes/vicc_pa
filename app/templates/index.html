@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventar – VICC Praxisarbeit</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+    h1 { font-size: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { text-align: left; padding: .5rem; border-bottom: 1px solid #ddd; }
+    form.inline { display: inline; }
+    input[type=text] { width: 60%; padding: .4rem; }
+    input[type=number] { width: 20%; padding: .4rem; }
+    button { padding: .4rem .8rem; cursor: pointer; }
+    footer { margin-top: 2rem; font-size: .85rem; color: #666; }
+    code { background: #f4f4f4; padding: .1rem .3rem; }
+  </style>
+</head>
+<body>
+  <h1>Inventarliste</h1>
+  <p>Containerisierte Webapplikation auf Azure Container Apps mit Azure SQL Database (Serverless).</p>
+
+  <form method="post" action="{{ url_for('create_item_form') }}">
+    <input type="text" name="name" placeholder="Bezeichnung" required>
+    <input type="number" name="quantity" placeholder="Menge" min="0" value="1" required>
+    <button type="submit">Hinzufügen</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Bezeichnung</th><th>Menge</th><th>Erstellt (UTC)</th><th></th></tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.created_at }}</td>
+        <td>
+          <form class="inline" method="post" action="{{ url_for('delete_item_form', item_id=item.id) }}">
+            <button type="submit">Löschen</button>
+          </form>
+        </td>
+      </tr>
+      {% else %}
+      <tr><td colspan="5">Noch keine Einträge vorhanden.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <footer>
+    <p>Web-API: <code>GET /api/items</code>, <code>POST /api/items</code>, <code>GET|PUT|DELETE /api/items/&lt;id&gt;</code>, <code>GET /api/health</code></p>
+    <p>Bedient von Replica: <code>{{ hostname }}</code></p>
+  </footer>
+</body>
+</html>
