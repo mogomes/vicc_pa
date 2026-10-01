@@ -1,0 +1,21 @@
+# Terraform – State enthält Secrets, niemals committen
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.*
+infra/*.tfstate.backup
+infra/terraform.tfvars
+infra/backend.tf
+infra/.terraform.lock.hcl
+infra/*.tfplan
+infra/crash.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Lokale Entwicklung
+app/.env
+docs/*.docx~
+.DS_Store

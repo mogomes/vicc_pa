@@ -1,0 +1,16 @@
+# Optional: Remote State in Azure Storage (empfohlen, sobald mehr als eine Person
+# oder eine Pipeline die Infrastruktur verwaltet). Nach backend.tf umbenennen und
+# den Storage Account einmalig manuell oder per Bootstrap-Script anlegen.
+#
+# az group create -n rg-vicc-tfstate -l switzerlandnorth
+# az storage account create -n stvicctfstateXXXX -g rg-vicc-tfstate -l switzerlandnorth --sku Standard_LRS
+# az storage container create -n tfstate --account-name stvicctfstateXXXX
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-vicc-tfstate"
+    storage_account_name = "stvicctfstateXXXX"
+    container_name       = "tfstate"
+    key                  = "vicc-prod.tfstate"
+  }
+}
