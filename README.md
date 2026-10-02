@@ -1,6 +1,6 @@
 # VICC Praxisarbeit – Containerisierte Webapplikation auf Azure (PaaS, DBaaS, IaC)
 
-Praxisarbeit im Fach Virtualisierung und Cloud Computing (VICC)
+Praxisarbeit im Fach Virtualisierung und Cloud Computing (VICC).
 
 **Thema:** Bereitstellung einer containerisierten Webapplikation auf Azure mittels PaaS,
 DBaaS und Infrastructure as Code.
@@ -22,7 +22,8 @@ Aufgabenstellung **nicht** Bewertungsgegenstand und dient als Testlast für die 
 ```
 app/        Applikation, Dockerfile, docker-compose.yml (lokaler Betrieb)
 infra/      Terraform-Konfiguration für die gesamte Azure-Infrastruktur
-docs/       Architekturzeichnung und Begleitmaterial zur Dokumentation
+docs/       Architekturzeichnung (SVG/PNG)
+test/       k6-Lasttest-Script
 .github/    Workflow: Image bauen und auf Docker Hub veröffentlichen
 ```
 
