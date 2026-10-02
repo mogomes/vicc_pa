@@ -1,6 +1,6 @@
 # VICC Praxisarbeit – Containerisierte Webapplikation auf Azure (PaaS, DBaaS, IaC)
 
-Praxisarbeit im Fach Virtualisierung und Cloud Computing (VICC), HFINFP 3. Studienjahr, ipso! Bildung.
+Praxisarbeit im Fach Virtualisierung und Cloud Computing (VICC)
 
 **Thema:** Bereitstellung einer containerisierten Webapplikation auf Azure mittels PaaS,
 DBaaS und Infrastructure as Code.
