@@ -89,11 +89,3 @@ docker compose up --build
 | Terraform State | lokal | Remote State in Azure Storage (`backend.tf.example`) |
 | Hochverfügbarkeit DB | Lokal redundanter Speicher, Standard-SLA | Zone-redundante Konfiguration |
 | Image-Deployment | manuelles `terraform apply` mit neuem Tag | automatisiertes Rollout nach Image-Push |
-
-## Dokumentation
-
-Repository: https://github.com/mogomes/vicc_pa – Image: https://hub.docker.com/r/cyxeon/vicc-inventory
-
-Die schriftliche Arbeit (PDF) wird über die ipso-Campus-Plattform abgegeben. Dieses
-Repository enthält sämtliche Scripts und Konfigurationen, die zum Nachbau der Umgebung
-benötigt werden.
